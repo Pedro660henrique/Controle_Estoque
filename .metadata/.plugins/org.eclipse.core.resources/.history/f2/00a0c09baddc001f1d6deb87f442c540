@@ -1,0 +1,5 @@
+package DbException;
+
+public class DbException {
+
+}
