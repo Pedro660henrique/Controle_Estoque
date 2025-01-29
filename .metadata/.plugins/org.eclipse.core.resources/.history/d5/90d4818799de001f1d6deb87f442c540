@@ -122,37 +122,4 @@ public class ClienteDaoJDBC implements BaseDao<Cliente> {
         }
         return clientes;
     }
-
-    public List<Cliente> findByName(String nomeCliente) {
-        String sql = "SELECT * FROM cliente WHERE nomeCliente LIKE ?";
-        List<Cliente> clientes = new ArrayList<>();
-        
-        try (PreparedStatement st = conn.prepareStatement(sql)) {
-            st.setString(1, "%" + nomeCliente + "%");
-            try (ResultSet rs = st.executeQuery()) {
-                while (rs.next()) {
-                    Cliente cliente = new Cliente();
-                    cliente.setIdCliente(rs.getInt("idCliente"));
-                    cliente.setNomeCliente(rs.getString("nomeCliente"));
-                    cliente.setTelefone(rs.getString("telefone"));
-                    cliente.setEndercoCliente(rs.getString("enderecoCliente"));
-                    cliente.setCidade(rs.getString("cidade"));
-                    cliente.setBairro(rs.getString("bairro"));
-                    cliente.setCep(rs.getString("cep"));
-                    cliente.setUf(rs.getString("uf"));
-                    clientes.add(cliente);
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao buscar clientes pelo nome: " + e.getMessage(), e);
-        }
-
-        if (!clientes.isEmpty()) {
-            Cliente cliente = clientes.get(0);
-            System.out.println(cliente);
-        } else {
-            System.out.println("Cliente não encontrado.");
-        }
-        return clientes;
-	    }
-	}
+}

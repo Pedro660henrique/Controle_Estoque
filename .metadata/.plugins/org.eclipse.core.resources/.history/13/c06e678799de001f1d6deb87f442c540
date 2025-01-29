@@ -128,39 +128,4 @@ public class FornecedorDaoJDBC implements BaseDao<Fornecedor> {
         }
         return fornecedores;
     }
-    
-    public List<Fornecedor> findByName(String nomeFornecedor) {
-        String sql = "SELECT * FROM fornecedor WHERE nomeFornecedor LIKE ?";
-        List<Fornecedor> fornecedores = new ArrayList<>();
-        
-        try (PreparedStatement st = conn.prepareStatement(sql)) {
-            st.setString(1, "%" + nomeFornecedor + "%");
-            try (ResultSet rs = st.executeQuery()) {
-                while (rs.next()) {
-                    Fornecedor fornecedor = new Fornecedor();
-                    fornecedor.setIdFornecedor(rs.getInt("idFornecedor"));
-                    fornecedor.setNomeFornecedor(rs.getString("nomeFornecedor"));
-                    fornecedor.setEnderecoFornecedor(rs.getString("endereco"));
-                    fornecedor.setCidade(rs.getString("cidade"));
-                    fornecedor.setBairro(rs.getString("bairro"));
-                    fornecedor.setCep(rs.getString("cep"));
-                    fornecedor.setUf(rs.getString("uf"));
-                    fornecedor.setTelefone(rs.getString("tel"));
-                    fornecedor.setCnpj(rs.getString("cnpj"));
-                    fornecedores.add(fornecedor);
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao buscar fornecedores pelo nome: " + e.getMessage(), e);
-        }
-
-        if (!fornecedores.isEmpty()) {
-            Fornecedor fornecedor = fornecedores.get(0);
-            System.out.println(fornecedor);
-        } else {
-            System.out.println("Fornecedor não encontrado.");
-        }
-        return fornecedores;
-    	}
-	}
-
+}

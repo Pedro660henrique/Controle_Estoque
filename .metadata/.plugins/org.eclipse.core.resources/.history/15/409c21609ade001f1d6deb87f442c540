@@ -1,24 +1,23 @@
 package application;
 
+import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Scanner;
 
 import model.dao.DaoFactory;
-import model.dao.impl.ClienteDaoJDBC;
-import model.dao.impl.EntradaDaoJDBC;
-import model.dao.impl.FornecedorDaoJDBC;
-import model.dao.impl.LoginDaoJDBC;
-import model.dao.impl.ProdutoDaoJDBC;
-import model.dao.impl.SaidaDaoJDBC;
-import model.dao.impl.UsuarioDaoJDBC;
-import model.entities.Cliente;
-import model.entities.Entrada;
-import model.entities.Fornecedor;
-import model.entities.Produto;
-import model.entities.Saida;
 import model.entities.Usuario;
+import model.entities.Entrada;
+import model.entities.Saida;
+import model.entities.Fornecedor;
+import model.entities.Cliente;
+import model.entities.Produto;
+import model.dao.impl.LoginDaoJDBC;
+import model.dao.impl.UsuarioDaoJDBC;
+import model.dao.impl.EntradaDaoJDBC;
+import model.dao.impl.SaidaDaoJDBC;
+import model.dao.impl.FornecedorDaoJDBC;
+import model.dao.impl.ClienteDaoJDBC;
+import model.dao.impl.ProdutoDaoJDBC;
 
 public class Program {
 
@@ -263,9 +262,9 @@ public class Program {
         	    System.out.print("Digite o nome do cliente para buscar: ");
         	    sc.nextLine();
         	    String nomeCliente = sc.nextLine();
-        	    List<Cliente> clientes = clienteDao.findByName(nomeCliente);
-        	    if (!clientes.isEmpty()) {
-        	        System.out.println(clientes.get(0));
+        	    Cliente cliente = clienteDao.findByName(nomeCliente);
+        	    if (cliente != null) {
+        	        System.out.println(cliente);
         	    } else {
         	        System.out.println("Cliente não encontrado.");
         	    }
@@ -274,16 +273,15 @@ public class Program {
         	    System.out.print("Digite o nome do fornecedor para buscar: ");
         	    sc.nextLine();
         	    String nomeFornecedor = sc.nextLine();
-        	    List<Fornecedor> fornecedores = fornecedorDao.findByName(nomeFornecedor);
-        	    if (!fornecedores.isEmpty()) {
-        	        System.out.println(fornecedores.get(0));
+        	    Fornecedor fornecedor = fornecedorDao.findByName(nomeFornecedor);
+        	    if (fornecedor != null) {
+        	        System.out.println(fornecedor);
         	    } else {
         	        System.out.println("Fornecedor não encontrado.");
         	    }
-        	}
+        	} 
         	else {
         	    System.out.println("Opção inválida.");
         	}
         sc.close();
     }
-}

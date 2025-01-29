@@ -153,14 +153,7 @@ public class FornecedorDaoJDBC implements BaseDao<Fornecedor> {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao buscar fornecedores pelo nome: " + e.getMessage(), e);
         }
-
-        if (!fornecedores.isEmpty()) {
-            Fornecedor fornecedor = fornecedores.get(0);
-            System.out.println(fornecedor);
-        } else {
-            System.out.println("Fornecedor não encontrado.");
-        }
         return fornecedores;
-    	}
-	}
+    }
+}
 
