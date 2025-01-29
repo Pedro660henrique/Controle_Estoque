@@ -1,0 +1,47 @@
+package model.dao.impl;
+
+import java.sql.Connection;
+import java.util.List;
+
+import model.dao.BaseDao;
+import model.entities.Entrada;
+
+public class EntradaDaoJDBC implements BaseDao<Entrada> {
+	
+	private Connection conn;
+	
+	public EntradaDaoJDBC(Connection conn) {
+		this.conn = conn;
+	}
+
+	@Override
+	public void insert(Entrada obj) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Entrada obj) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Entrada findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Entrada> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

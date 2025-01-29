@@ -11,14 +11,14 @@ public class Fornecedor {
 	private String bairro;
 	private String cep;
 	private String uf;
-	private Integer telefone;
+	private String telefone;
 	private String cnpj;
 	
 	public Fornecedor() {
 	}
 
 	public Fornecedor(Integer idFornecedor, String nomeFornecedor, String enderecoFornecedor, String cidade,
-			String bairro, String cep, String uf, Integer telefone, String cnpj) {
+			String bairro, String cep, String uf, String telefone, String cnpj) {
 		this.idFornecedor = idFornecedor;
 		this.nomeFornecedor = nomeFornecedor;
 		this.enderecoFornecedor = enderecoFornecedor;
@@ -86,11 +86,11 @@ public class Fornecedor {
 		this.uf = uf;
 	}
 
-	public Integer getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Integer telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

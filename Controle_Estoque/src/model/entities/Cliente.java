@@ -9,7 +9,7 @@ public class Cliente implements Serializable {
 	
 	private Integer idCliente;
 	private String nomeCliente;
-	private Integer telefone;
+	private String telefone;
 	private String endercoCliente;
 	private String cidade;
 	private String bairro;
@@ -20,7 +20,7 @@ public class Cliente implements Serializable {
 		
 	}
 
-	public Cliente(Integer idCliente, String nomeCliente, Integer telefone, String endercoCliente, String cidade,
+	public Cliente(Integer idCliente, String nomeCliente, String telefone, String endercoCliente, String cidade,
 			String bairro, String cep, String uf) {
 		this.idCliente = idCliente;
 		this.nomeCliente = nomeCliente;
@@ -48,11 +48,11 @@ public class Cliente implements Serializable {
 		this.nomeCliente = nomeCliente;
 	}
 
-	public Integer getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Integer telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

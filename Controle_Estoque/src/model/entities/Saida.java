@@ -1,7 +1,7 @@
 package model.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Saida implements Serializable{
@@ -9,7 +9,7 @@ public class Saida implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer idSaida;
-	private Date dataSaida;
+	private LocalDate dataSaida;
 	private Double precoSaida;
 	
 	private Usuario usuario;
@@ -20,7 +20,7 @@ public class Saida implements Serializable{
 		
 	}
 
-	public Saida(Integer idSaida, Date dataSaida, Double precoSaida, Usuario usuario, Produto produto,
+	public Saida(Integer idSaida, LocalDate dataSaida, Double precoSaida, Usuario usuario, Produto produto,
 			Cliente cliente) {
 		this.idSaida = idSaida;
 		this.dataSaida = dataSaida;
@@ -38,11 +38,11 @@ public class Saida implements Serializable{
 		this.idSaida = idSaida;
 	}
 
-	public Date getDataSaida() {
+	public LocalDate getDataSaida() {
 		return dataSaida;
 	}
 
-	public void setDataSaida(Date dataSaida) {
+	public void setDataSaida(LocalDate dataSaida) {
 		this.dataSaida = dataSaida;
 	}
 

@@ -1,0 +1,37 @@
+package model.dao;
+
+import model.dao.impl.ClienteDaoJDBC;
+import model.dao.impl.EntradaDaoJDBC;
+import model.dao.impl.FornecedorDaoJDBC;
+import model.dao.impl.ProdutoDaoJDBC;
+import model.dao.impl.SaidaDaoJDBC;
+import model.dao.impl.UsuarioDaoJDBC;
+import model.entities.Cliente;
+import model.entities.Entrada;
+import model.entities.Fornecedor;
+import model.entities.Saida;
+import model.entities.Usuario;
+
+public class DaoFactory {
+	
+	public static ProdutoDaoJDBC createProdutoDao() {
+		return new ProdutoDaoJDBC();
+	}
+	
+	public static BaseDao<Fornecedor> createFornecedorDao(){
+		return new FornecedorDaoJDBC();
+	}
+	public static BaseDao<Usuario> createUsuarioDao(){
+		return new UsuarioDaoJDBC();
+	}
+	public static BaseDao<Cliente> createClienteDao(){
+		return new ClienteDaoJDBC();
+	}
+	public static BaseDao<Entrada> createEntradaDao(){
+		return new EntradaDaoJDBC();
+	}
+	public static BaseDao<Saida> createSaidaDao(){
+		return new SaidaDaoJDBC();
+	}
+	
+}
